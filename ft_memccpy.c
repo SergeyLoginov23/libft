@@ -5,6 +5,7 @@ void *ft_memccpy(void *dest, const void *src, int c, size_t n)
     unsigned int    i;
     unsigned char *ptr;
     unsigned char *ptr2;
+    unsigned int    k;
 
     i = 0;
     ptr = (unsigned char*)dest;
@@ -13,9 +14,14 @@ void *ft_memccpy(void *dest, const void *src, int c, size_t n)
     {
         ptr[i] = ptr2[i];
         if (ptr[i] == (unsigned char)c)
-            return (dest);
+            {
+                k = i;
+                i = 0;
+                while (i++ <= k)
+                    dest++;
+                return ((void*)dest);
+            }
         i++;        
     } 
-    return (NULL);
-    
+    return (NULL);    
 }
