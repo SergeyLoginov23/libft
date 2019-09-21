@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jfrancin <jfrancin@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/10 22:18:17 by jfrancin          #+#    #+#             */
+/*   Updated: 2019/09/21 19:07:13 by jfrancin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strncat(char *dest, char *src, size_t nb)
+char	*ft_strncat(char *dest, const char *src, size_t nb)
 {
 	int		i;
 	size_t	j;

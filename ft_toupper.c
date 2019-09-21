@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancin <jfrancin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 21:21:30 by jfrancin          #+#    #+#             */
-/*   Updated: 2019/09/20 19:06:55 by jfrancin         ###   ########.fr       */
+/*   Created: 2019/09/08 16:55:28 by jfrancin          #+#    #+#             */
+/*   Updated: 2019/09/10 20:23:25 by jfrancin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_toupper(int c)
 {
-	unsigned char	*ptr;
-	unsigned char	*ptr2;
-	unsigned int	i;
-
-	if (!dest & !src)
-		return (NULL);
-	i = 0;
-	ptr = (unsigned char*)dest;
-	ptr2 = (unsigned char*)src;
-	while (i < n)
+	if (c >= 97 && c <= 122)
 	{
-		ptr[i] = ptr2[i];
-		i++;
+		c = c - 32;
+		return (c);
 	}
-	return (dest);
+	else
+		return (c);
 }
