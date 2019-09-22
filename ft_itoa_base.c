@@ -6,13 +6,13 @@
 /*   By: jfrancin <jfrancin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 18:11:16 by jfrancin          #+#    #+#             */
-/*   Updated: 2019/09/21 18:25:17 by jfrancin         ###   ########.fr       */
+/*   Updated: 2019/09/22 17:08:09 by jfrancin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	long	check_min(int nbr, int *neg)
+static long	check_min(int nbr, int *neg)
 {
 	if (nbr < 0)
 	{
@@ -23,7 +23,7 @@ static	long	check_min(int nbr, int *neg)
 		return ((long)nbr);
 }
 
-char			*ft_itoa_base(int nbr, int base)
+char		*ft_itoa_base(int nbr, int base)
 {
 	int		neg;
 	int		len;

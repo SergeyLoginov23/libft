@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancin <jfrancin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 22:33:34 by jfrancin          #+#    #+#             */
-/*   Updated: 2019/09/22 17:12:26 by jfrancin         ###   ########.fr       */
+/*   Created: 2019/09/22 15:49:51 by jfrancin          #+#    #+#             */
+/*   Updated: 2019/09/22 15:56:13 by jfrancin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
-
-	i = 0;
-	k = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[k] != '\0')
-		k++;
-	if (size <= i)
-		k = k + size;
-	else
-		k = k + i;
-	while (src[j] != '\0' && i + 1 < size)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (k);
+	new->next = *alst;
+	*alst = new;
 }

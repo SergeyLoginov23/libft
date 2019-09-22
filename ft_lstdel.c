@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfrancin <jfrancin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 22:33:34 by jfrancin          #+#    #+#             */
-/*   Updated: 2019/09/22 17:12:26 by jfrancin         ###   ########.fr       */
+/*   Created: 2019/09/22 15:48:28 by jfrancin          #+#    #+#             */
+/*   Updated: 2019/09/22 15:49:29 by jfrancin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	t_list	*ptr;
+	t_list	*tmp;
 
-	i = 0;
-	k = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[k] != '\0')
-		k++;
-	if (size <= i)
-		k = k + size;
-	else
-		k = k + i;
-	while (src[j] != '\0' && i + 1 < size)
+	ptr = *alst;
+	while (ptr)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		tmp = ptr;
+		ft_lstdelone(&ptr, del);
+		ptr = tmp->next;
 	}
-	dest[i] = '\0';
-	return (k);
+	*alst = NULL;
 }
